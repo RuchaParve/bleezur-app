@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Form from './components/Form';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Profiles from './components/Profiles';
+import ProfilesData from './components/ProfilesData';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Form />} />
           <Route path="/Profiles" exact element={<Profiles />} />
+          <Route path="/Profile/:id" exact element={<ProfilesData />} />
         </Routes>
       </BrowserRouter>
     </div>

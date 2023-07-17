@@ -89,138 +89,207 @@ function Form() {
     return (
         <Grid container sx={{ padding: "50px", background: "#f5f5f5" }}>
             <Grid item md={12} sx={{ marginBottom: "20px" }}>
-                <Typography sx={{ fontWeight: 'bold' }}>Let us define your Ideal Customer Profile</Typography>
+                <Typography variant="h5" fontFamily={'serif'} sx={{
+                    fontWeight: 'bold',
+                    color: 'rgb(72, 73, 75)',
+                    fontWeight: '700',
+                    textSizeAdjust: '100%',
+                }}>
+                    Let us define your Ideal Customer Profile
+                </Typography>
             </Grid>
             <Grid item md={6}>
                 <form onSubmit={handleSubmit} action={<Link to="/login" />}>
                     <label for="name-field">
-                    <Typography display="inline">Your Name </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
+                        <Typography display="inline">Your Name </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <Stack spacing={2} direction="row" sx={{ marginBottom: 4, mt: 2 }}>
-                        <label for="name-field">
-                            First Name
-                        </label>
-                        <TextField
-                            type="text"
-                            variant='outlined'
-                            color='secondary'
-                            onChange={e => setFirstName(e.target.value)}
-                            value={firstName}
-                            fullWidth
-                            required
-                        />
-                        <label for="name-field">
-                            Last Name
-                        </label>
-                        <TextField
-                            type="text"
-                            variant='outlined'
-                            color='secondary'
-                            onChange={e => setLastName(e.target.value)}
-                            value={lastName}
-                            fullWidth
-                            required
-                        />
+                        <div>
+                            <label for="name-field">
+                                First Name
+                            </label>
+                            <TextField
+                                type="text"
+                                variant='outlined'
+                                sx={{
+                                    "& .MuiOutlinedInput-root": {
+                                        "&.Mui-focused fieldset": {
+                                            borderColor: "black",
+                                        },
+                                    },
+                                }}
+                                onChange={e => setFirstName(e.target.value)}
+                                value={firstName}
+                                fullWidth
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="name-field">
+                                Last Name
+                            </label>
+                            <TextField
+                                type="text"
+                                variant='outlined'
+                                sx={{
+                                    "& .MuiOutlinedInput-root": {
+                                        "&.Mui-focused fieldset": {
+                                            borderColor: "black",
+                                        },
+                                    },
+                                }}
+                                onChange={e => setLastName(e.target.value)}
+                                value={lastName}
+                                fullWidth
+                                required
+                            />
+                        </div>
                     </Stack>
                     <label for="name-field">
-                    <Typography display="inline">Your Email </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
+                        <Typography display="inline">Your Email </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
                         type="email"
                         variant='outlined'
-                        color='secondary'
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }} 
                         onChange={e => setEmail(e.target.value)}
                         value={email}
                         fullWidth
                         required
-                        sx={{ mb: 4, mt: 1 }}
                     />
                     <label for="name-field">
-                    <Typography display="inline">Your Company Name </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
+                        <Typography display="inline">Your Company Name </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
                         variant='outlined'
-                        color='secondary'
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }}  
                         onChange={e => setCompanyName(e.target.value)}
                         value={companyName}
                         required
                         fullWidth
-                        sx={{ mb: 4, mt: 1 }}
                     />
                     <label for="name-field">
-                    <Typography display="inline">Your Company Website/URL </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
+                        <Typography display="inline">Your Company Website/URL </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
                         variant='outlined'
-                        color='secondary'
-                        InputProps={{
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }}  InputProps={{
                             startAdornment: <InputAdornment position="start">http://</InputAdornment>,
                         }}
                         onChange={e => setCompanyUrl(e.target.value)}
                         value={companyUrl}
                         fullWidth
                         required
-                        sx={{ mb: 4, mt: 1 }}
                     />
                     <label for="name-field">
-                    <Typography display="inline">Your Role / Designation </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
+                        <Typography display="inline">Your Role / Designation </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
                         variant='outlined'
-                        color='secondary'
-                        onChange={e => setRole(e.target.value)}
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }}  onChange={e => setRole(e.target.value)}
                         vale={role}
                         fullWidth
                         required
-                        sx={{ mb: 4, mt: 1 }}
                     />
                     <label for="name-field">
-                    <Typography display="inline">Customer Profile Details </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
+                        <Typography display="inline">Customer Profile Details </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
                         variant='standard'
-                        color='secondary'
-                        onChange={e => setCustomerProfileDetails(e.target.value)}
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }}  onChange={e => setCustomerProfileDetails(e.target.value)}
                         value={customerProfileDetails}
+                        placeholder='Attributes to create an Ideal Customer Profile'
                         fullWidth
+                        disabled
                         required
-                        sx={{ mb: 4, mt: 1 }}
                     />
                     <label for="name-field">
                         <Typography display="inline">Where do yo want to sell? </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
                         variant='outlined'
-                        color='secondary'
-                        placeholder='City, State, Country - Add multiple'
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }}  placeholder='City, State, Country - Add multiple'
                         onChange={e => setSellingAddress(e.target.value)}
                         value={sellingAddress}
                         multiline
                         rows={4}
                         fullWidth
-                        sx={{ mb: 4, mt: 1 }}
                     />
                     <label for="name-field">
                         <Typography display="inline">Which industry do you focus on? </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
                         variant='outlined'
-                        color='secondary'
-                        placeholder='Industry Domain, Industry Subdomains - Add multiple'
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }}  placeholder='Industry Domain, Industry Subdomains - Add multiple'
                         onChange={(e) => setIndustryName(e.target.value)}
                         value={industryName}
                         multiline
                         rows={4}
                         fullWidth
                         required
-                        sx={{ mb: 4, mt: 1 }}
                     />
                     <label for="name-field">
                         <Typography display="inline">Who do you sell to? </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
                         variant='outlined'
-                        color='secondary'
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }}  
                         placeholder='Roles/Designation - Add multiple'
                         onChange={(e) => { setSellingProfileNames(e.target.value) }}
                         value={sellingProfileNames}
@@ -228,7 +297,6 @@ function Form() {
                         rows={4}
                         fullWidth
                         required
-                        sx={{ mb: 4, mt: 1 }}
                     /><br></br>
                     <label for="name-field">
                         <Typography display="inline">What is the size of the company who you sell to? </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
@@ -296,15 +364,20 @@ function Form() {
                     </label>
                     <TextField
                         variant='outlined'
-                        color='secondary'
-                        InputProps={{
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }}  InputProps={{
                             startAdornment: <InputAdornment position="start">$</InputAdornment>,
                         }}
                         onChange={(e) => setDealSize(e.target.value)}
                         value={dealSize}
                         fullWidth
                         required
-                        sx={{ mb: 4, mt: 1 }}
                     />
                     <br></br>
                     <label for="name-field">
@@ -312,31 +385,41 @@ function Form() {
                     </label>
                     <TextField
                         variant='outlined'
-                        color='secondary'
-                        placeholder='Industry Domain, Industry Subdomains - Add multiple'
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }}  placeholder='Industry Domain, Industry Subdomains - Add multiple'
                         onChange={(e) => setLeads(e.target.value)}
                         value={leads}
                         multiline
                         rows={4}
                         fullWidth
                         required
-                        sx={{ mb: 4, mt: 1 }}
                     />
                     <label for="name-field">
                         What are the main skills / strengths that you position to win the deal?                    </label>
                     <TextField
                         variant='outlined'
-                        color='secondary'
-                        placeholder='Technologies, Services, Capabilities - Add multiple'
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "&.Mui-focused fieldset": {
+                                    borderColor: "black",
+                                },
+                            },
+                            mb: 4, mt: 1 
+                        }}  placeholder='Technologies, Services, Capabilities - Add multiple'
                         onChange={(e) => setSkillsandStrengths(e.target.value)}
                         value={skillsandStrengths}
                         multiline
                         rows={4}
                         fullWidth
                         required
-                        sx={{ mb: 4, mt: 1 }}
                     />
-                    <Button type="submit" style={{ background: "#f6745a", height: 55, color: "white", width: 80 }} >
+                    <Button type="submit" style={{ background: "#f6745a", height: 55, color: "white", width: 130 }} >
                         Submit</Button>
                 </form>
             </Grid>

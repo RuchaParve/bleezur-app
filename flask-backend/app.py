@@ -1,10 +1,15 @@
 from flask import Flask, request, jsonify,json
+from bson.json_util import dumps
+from bson.objectid import ObjectId
 from flask_pymongo import PyMongo
 
+#Conection to mongo dp
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://ruchaparve76:rucha76@cluster0.nk2hmnn.mongodb.net/customer?retryWrites=true&w=majority"
 mongo = PyMongo(app)
 
+
+#adding profile
 @app.route("/addProfile/", methods=["POST"])
 def add_profile():
     _json = request.json
@@ -19,7 +24,14 @@ def add_profile():
     else:
         return not_found()
     
-
+#get profiles by id
+@app.route("/getProfile/<id>")
+def user(id):
+	user = mongo.db.customer_profiles.find_one({'_id': ObjectId(id)})
+	resp = dumps(user)
+	return resp
+    
+#get all profiles
 @app.route('/getProfiles')
 def users():
     documents = mongo.db.customer_profiles.find()
@@ -28,7 +40,8 @@ def users():
         document['_id'] = str(document['_id'])
         response.append(document)
     return json.dumps(response)
-    
+
+#errorhandler for 404 error 
 @app.errorhandler(404)
 def not_found(error=None):
     message = {
