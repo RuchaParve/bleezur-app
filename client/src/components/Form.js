@@ -80,7 +80,6 @@ function Form() {
         })
             .then((res) =>
                 res.json().then((data) => {
-                    alert(res);
                     navigate('/profiles')
                 }))
         console.log(obj);
@@ -89,7 +88,7 @@ function Form() {
     return (
         <Grid container sx={{ padding: "50px", background: "#f5f5f5" }}>
             <Grid item md={12} sx={{ marginBottom: "20px" }}>
-                <Typography variant="h5" fontFamily={'serif'} sx={{
+                <Typography variant="h5" sx={{
                     fontWeight: 'bold',
                     color: 'rgb(72, 73, 75)',
                     fontWeight: '700',
@@ -100,13 +99,13 @@ function Form() {
             </Grid>
             <Grid item md={6}>
                 <form onSubmit={handleSubmit} action={<Link to="/login" />}>
-                    <label for="name-field">
+                    <label >
                         <Typography display="inline">Your Name </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <Stack spacing={2} direction="row" sx={{ marginBottom: 4, mt: 2 }}>
                         <div>
-                            <label for="name-field">
-                                First Name
+                            <label >
+                                <Typography display="inline">First Name</Typography>
                             </label>
                             <TextField
                                 type="text"
@@ -117,6 +116,7 @@ function Form() {
                                             borderColor: "black",
                                         },
                                     },
+                                    mt: 1
                                 }}
                                 onChange={e => setFirstName(e.target.value)}
                                 value={firstName}
@@ -125,8 +125,8 @@ function Form() {
                             />
                         </div>
                         <div>
-                            <label for="name-field">
-                                Last Name
+                            <label >
+                                <Typography display="inline">Last Name</Typography>
                             </label>
                             <TextField
                                 type="text"
@@ -137,6 +137,7 @@ function Form() {
                                             borderColor: "black",
                                         },
                                     },
+                                    mt: 1
                                 }}
                                 onChange={e => setLastName(e.target.value)}
                                 value={lastName}
@@ -145,7 +146,7 @@ function Form() {
                             />
                         </div>
                     </Stack>
-                    <label for="name-field">
+                    <label >
                         <Typography display="inline">Your Email </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
@@ -157,14 +158,14 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }} 
+                            mb: 4, mt: 1
+                        }}
                         onChange={e => setEmail(e.target.value)}
                         value={email}
                         fullWidth
                         required
                     />
-                    <label for="name-field">
+                    <label >
                         <Typography display="inline">Your Company Name </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
@@ -175,14 +176,14 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }}  
+                            mb: 4, mt: 1
+                        }}
                         onChange={e => setCompanyName(e.target.value)}
                         value={companyName}
                         required
                         fullWidth
                     />
-                    <label for="name-field">
+                    <label >
                         <Typography display="inline">Your Company Website/URL </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
@@ -193,8 +194,8 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }}  InputProps={{
+                            mb: 4, mt: 1
+                        }} InputProps={{
                             startAdornment: <InputAdornment position="start">http://</InputAdornment>,
                         }}
                         onChange={e => setCompanyUrl(e.target.value)}
@@ -202,7 +203,7 @@ function Form() {
                         fullWidth
                         required
                     />
-                    <label for="name-field">
+                    <label >
                         <Typography display="inline">Your Role / Designation </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
@@ -213,13 +214,13 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }}  onChange={e => setRole(e.target.value)}
+                            mb: 4, mt: 1
+                        }} onChange={e => setRole(e.target.value)}
                         vale={role}
                         fullWidth
                         required
                     />
-                    <label for="name-field">
+                    <label >
                         <Typography display="inline">Customer Profile Details </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
@@ -230,15 +231,15 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }}  onChange={e => setCustomerProfileDetails(e.target.value)}
+                            mb: 4, mt: 1
+                        }} onChange={e => setCustomerProfileDetails(e.target.value)}
                         value={customerProfileDetails}
                         placeholder='Attributes to create an Ideal Customer Profile'
                         fullWidth
                         disabled
                         required
                     />
-                    <label for="name-field">
+                    <label >
                         <Typography display="inline">Where do yo want to sell? </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
@@ -249,15 +250,15 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }}  placeholder='City, State, Country - Add multiple'
+                            mb: 4, mt: 1
+                        }} placeholder='City, State, Country - Add multiple'
                         onChange={e => setSellingAddress(e.target.value)}
                         value={sellingAddress}
                         multiline
                         rows={4}
                         fullWidth
                     />
-                    <label for="name-field">
+                    <label >
                         <Typography display="inline">Which industry do you focus on? </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
@@ -268,8 +269,8 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }}  placeholder='Industry Domain, Industry Subdomains - Add multiple'
+                            mb: 4, mt: 1
+                        }} placeholder='Industry Domain, Industry Subdomains - Add multiple'
                         onChange={(e) => setIndustryName(e.target.value)}
                         value={industryName}
                         multiline
@@ -277,7 +278,7 @@ function Form() {
                         fullWidth
                         required
                     />
-                    <label for="name-field">
+                    <label >
                         <Typography display="inline">Who do you sell to? </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
@@ -288,8 +289,8 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }}  
+                            mb: 4, mt: 1
+                        }}
                         placeholder='Roles/Designation - Add multiple'
                         onChange={(e) => { setSellingProfileNames(e.target.value) }}
                         value={sellingProfileNames}
@@ -298,7 +299,7 @@ function Form() {
                         fullWidth
                         required
                     /><br></br>
-                    <label for="name-field">
+                    <label >
                         <Typography display="inline">What is the size of the company who you sell to? </Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label><br></br>
                     <FormControl sx={{ width: 300, mt: 1, mb: 4 }}>
@@ -328,10 +329,9 @@ function Form() {
                         </Select>
                     </FormControl>
                     <br></br>
-                    <label for="name-field">
-                        What is the revenue of the company you sell to?
+                    <label >
+                        <Typography>What is the revenue of the company you sell to?</Typography>
                     </label>
-                    <br></br>
                     <FormControl sx={{ width: 300, mt: 1, mb: 4 }}>
                         <Select
                             displayEmpty
@@ -359,8 +359,8 @@ function Form() {
                         </Select>
                     </FormControl>
                     <br></br>
-                    <label for="name-field">
-                        What is your average deal size?
+                    <label >
+                        <Typography> What is your average deal size?</Typography>
                     </label>
                     <TextField
                         variant='outlined'
@@ -370,8 +370,8 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }}  InputProps={{
+                            mb: 4, mt: 1
+                        }} InputProps={{
                             startAdornment: <InputAdornment position="start">$</InputAdornment>,
                         }}
                         onChange={(e) => setDealSize(e.target.value)}
@@ -379,9 +379,8 @@ function Form() {
                         fullWidth
                         required
                     />
-                    <br></br>
-                    <label for="name-field">
-                        How do you find a good lead right now?
+                    <label >
+                        <Typography display="inline"> How do you find a good lead right now?</Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
                     </label>
                     <TextField
                         variant='outlined'
@@ -391,8 +390,8 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }}  placeholder='Industry Domain, Industry Subdomains - Add multiple'
+                            mb: 4, mt: 1
+                        }} placeholder='Industry Domain, Industry Subdomains - Add multiple'
                         onChange={(e) => setLeads(e.target.value)}
                         value={leads}
                         multiline
@@ -400,8 +399,9 @@ function Form() {
                         fullWidth
                         required
                     />
-                    <label for="name-field">
-                        What are the main skills / strengths that you position to win the deal?                    </label>
+                    <label >
+                        <Typography display="inline">What are the main skills / strengths that you position to win the deal?</Typography><Typography display="inline" sx={{ color: "grey" }}>(required)</Typography>
+                    </label>
                     <TextField
                         variant='outlined'
                         sx={{
@@ -410,8 +410,8 @@ function Form() {
                                     borderColor: "black",
                                 },
                             },
-                            mb: 4, mt: 1 
-                        }}  placeholder='Technologies, Services, Capabilities - Add multiple'
+                            mb: 4, mt: 1
+                        }} placeholder='Technologies, Services, Capabilities - Add multiple'
                         onChange={(e) => setSkillsandStrengths(e.target.value)}
                         value={skillsandStrengths}
                         multiline

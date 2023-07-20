@@ -15,19 +15,24 @@ function Navbar() {
 
   return (
     <header>
-
-      <nav ref={navRef} >
-
-        <div
-          className="logo-image"
+      <div
+        className="logo"
+      >
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/5f64a4f657d4ea1d44d92b63/1607270045845-FMVDZL96YXNHAMSEC9UQ/Bleezur_Colour%2BheaderTM.png?format=1500w"
+          width={220}
+          style={{ marginRight: "220px", marginLeft: "33px" }}
+          class="large"
+        ></img>
+        <img
+          src="//images.squarespace-cdn.com/content/v1/5f64a4f657d4ea1d44d92b63/1607270071024-KVC51YTW63X9VBPIBEQC/App+Logo.png?format=1500w"
+          width={50}
+          style={{ marginRight: "220px", marginLeft: "33px" }}
+          class="small"
         >
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/5f64a4f657d4ea1d44d92b63/1607270045845-FMVDZL96YXNHAMSEC9UQ/Bleezur_Colour%2BheaderTM.png?format=1500w"
-            width={200}
-            style={{ marginRight: "220px", marginLeft: "25px" }}
-          >
-          </img>
-        </div>
+        </img>
+      </div>
+      <nav ref={navRef} >
         <div>
           <a href="https://www.bleezur.ai/bleezur-in-action" data-animation-role="header-element">
             Bleezur in action
@@ -44,12 +49,7 @@ function Navbar() {
           </a>
         </div>
         <div>
-          <a href="https://www.bleezur.ai/trial-programs" data-animation-role="header-element">
-            Trial Programs
-          </a>
-        </div>
-        <div>
-          <Button variant="contained" style={{ background: "#f6745a", height: 55, color: "white", width: 180, marginLeft: "20px" }}>Schedule a Demo</Button>
+          <Button variant="contained" style={{ background: "#f6745a", height: 55, color: "white", width: 200, marginLeft: "20px", marginRight: "0" }}>Schedule a Demo</Button>
         </div>
         <button
           className="nav-btn nav-close-btn"
@@ -62,8 +62,6 @@ function Navbar() {
         onClick={showNavbar}>
         <MenuIcon />
       </button>
-
-
     </header>
   );
 }
